@@ -1,0 +1,11 @@
+**/.DS_Store
+**/Thumbs.db
+**/Desktop.ini
+
+/.idea
+/.vscode
+/.vagrant
+/nbproject
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
