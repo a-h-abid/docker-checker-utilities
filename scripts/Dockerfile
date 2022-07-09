@@ -14,9 +14,9 @@ ARG GID="1000"
 RUN groupadd --gid ${GID} app \
   && useradd --uid ${UID} --gid app --shell /bin/bash --create-home app
 
-RUN apt update \
-    && apt upgrade -y \
-    && apt install -y \
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y \
         vim \
         nano \
         curl \
