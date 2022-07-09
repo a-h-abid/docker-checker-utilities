@@ -16,14 +16,16 @@ RUN groupadd --gid ${GID} app \
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y \
-        vim \
-        nano \
-        curl \
-        openssl \
-        iputils-ping \
-        telnet \
-        ncat
+    && apt-get install -y --no-install-recommends \
+        vim=2:8.2.2434-3+deb11u1 \
+        nano=5.4-2 \
+        curl=7.74.0-1.3+deb11u1 \
+        openssl=1.1.1n-0+deb11u3 \
+        iputils-ping=3:20210202-1 \
+        telnet=0.17-42 \
+        ncat=7.91+dfsg1+really7.80+dfsg1-2 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN unset http_proxy https_proxy no_proxy
 
