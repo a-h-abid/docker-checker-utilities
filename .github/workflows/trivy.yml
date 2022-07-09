@@ -3,39 +3,30 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: build
+name: Trivy
 
 on:
+  create:
+    tags:
+      - '*'
   push:
-    branches: [ "main" ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
-  schedule:
-    - cron: '0 0 * * 0'
+    tags:
+      - '*'
 
 permissions:
   contents: read
 
 jobs:
-  build:
+  scan_image:
+    name: Trivy Scan
+    runs-on: "ubuntu-latest"
     permissions:
-      contents: read # for actions/checkout to fetch code
       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-    name: Build
-    runs-on: "ubuntu-18.04"
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Build an image from Dockerfile
-        run: |
-          docker build -t ghcr.io/a-h-abid/checker-utilities:${{ github.sha }} -f scripts/Dockerfile .
-
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
         with:
-          image-ref: 'ghcr.io/a-h-abid/checker-utilities:${{ github.sha }}'
+          image-ref: 'ghcr.io/a-h-abid/checker-utilities:1.1'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
