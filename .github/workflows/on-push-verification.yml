@@ -54,7 +54,7 @@ jobs:
           docker build -t ghcr.io/a-h-abid/checker-utilities:${{ github.sha }} -f scripts/Dockerfile .
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@v0.5.1
+        uses: aquasecurity/trivy-action@0.5.1
         with:
           scan-type: 'image'
           image-ref: 'ghcr.io/a-h-abid/checker-utilities:${{ github.sha }}'
