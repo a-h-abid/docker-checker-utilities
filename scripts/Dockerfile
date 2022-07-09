@@ -15,6 +15,7 @@ RUN groupadd --gid ${GID} app \
   && useradd --uid ${UID} --gid app --shell /bin/bash --create-home app
 
 RUN apt update \
+    && apt upgrade -y \
     && apt install -y \
         vim \
         nano \
