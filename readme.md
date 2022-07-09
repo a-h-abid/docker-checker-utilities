@@ -23,17 +23,17 @@ Run any of below commands:
 ### Using Image from Docker Hub
 
 ```
-docker run --rm -it docker.io/ahabid/checker-utilities:1.3 bash
+docker run --rm -it docker.io/ahabid/checker-utilities:latest bash
 # or
-podman run --rm -it docker.io/ahabid/checker-utilities:1.3 bash
+podman run --rm -it docker.io/ahabid/checker-utilities:latest bash
 ```
 
 ### Using Image from GitHub
 
 ```
-docker run --rm -it ghcr.io/a-h-abid/checker-utilities:1.3 bash
+docker run --rm -it ghcr.io/a-h-abid/checker-utilities:latest bash
 # or
-podman run --rm -it ghcr.io/a-h-abid/checker-utilities:1.3 bash
+podman run --rm -it ghcr.io/a-h-abid/checker-utilities:latest bash
 ```
 
 ### Inside Container
