@@ -69,7 +69,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: "{context}/scripts/Dockerfile"
+          file: "./scripts/Dockerfile"
           platforms: linux/amd64
           push: true
           tags: |
