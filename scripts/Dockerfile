@@ -18,7 +18,7 @@ RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends \
         vim=2:8.2.2434-3+deb11u1 \
-        nano=5.4-2 \
+        nano=5.4-2+deb11u1 \
         curl=7.74.0-1.3+deb11u1 \
         openssl=1.1.1n-0+deb11u3 \
         iputils-ping=3:20210202-1 \
